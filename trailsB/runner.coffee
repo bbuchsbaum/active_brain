@@ -78,7 +78,7 @@ instructions = """
                   RT: ev.RT
                   timeElapsed: ev.timeElapsed
                   index: ev.index
-                  task: "TrailsB"
+                  Task: "TrailsB"
                   trialNumber: context.get("State.trialNumber")
                   blockNumber: context.get("State.blockNumber")
                   node: ev.node_id

@@ -5,32 +5,26 @@
 
 
 getSession = ->
-  $.ajax(
-    url: "/session",
-    type: "GET",
-    dataType: "application/json"
-  )
+  $.getJSON( "/session")
 
 getSubject =  ->
-  $.ajax(
-    url: "/subject",
-    type: "GET",
-    dataType: "application/json"
-  )
+  $.getJSON( "/subject")
 
 Active_Brain.teststart = =>
   RAT.start(1, 1).then( -> ArrowFlanker.start(1,1)).then( -> TrailsB.start(1,1)).then(-> AST.start(1,1))
 
 Active_Brain.start = =>
   getSession()
-  .then( (session) -> getSubject())
-  .then( subject ) ->
-    session = session.data.ID
-    subject = subject.data.ID
-    AST.start(session, subject)
-    .then( -> ArrowFlanker.start(session, subject))
-    .then( -> TrailsB.start(session, subject))
-    .then(-> RAT.start(session, subject))
+  .then( (session) ->
+    window._session = session.data.ID
+    getSubject())
+  .then( (subject ) ->
+    window._subject = subject.data.ID
+    AST.start(window._session, window._subject)
+    .then( -> ArrowFlanker.start(window._session, window._subject))
+    .then( -> TrailsB.start(window._session, window._subject))
+    .then(-> RAT.start(window._session, window._subject)))
+
 
 
 

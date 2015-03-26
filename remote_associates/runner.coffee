@@ -164,6 +164,7 @@
                     question: record.Stimulus.toUpperCase()
                     trialNumber: record.TrialNumber
                     solution: record.solution
+                    Task: "Remote Associates"
                   resultObj.push(res)
                   console.log(resultObj)
                   #$("#nextbutton").removeClass("disabled")

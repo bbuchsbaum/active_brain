@@ -5,19 +5,11 @@
   this.Active_Brain = {};
 
   getSession = function() {
-    return $.ajax({
-      url: "/session",
-      type: "GET",
-      dataType: "application/json"
-    });
+    return $.getJSON("/session");
   };
 
   getSubject = function() {
-    return $.ajax({
-      url: "/subject",
-      type: "GET",
-      dataType: "application/json"
-    });
+    return $.getJSON("/subject");
   };
 
   Active_Brain.teststart = (function(_this) {
@@ -35,17 +27,16 @@
   Active_Brain.start = (function(_this) {
     return function() {
       return getSession().then(function(session) {
+        window._session = session.data.ID;
         return getSubject();
-      }).then(subject)(function() {
-        var session, subject;
-        session = session.data.ID;
-        subject = subject.data.ID;
-        return AST.start(session, subject).then(function() {
-          return ArrowFlanker.start(session, subject);
+      }).then(function(subject) {
+        window._subject = subject.data.ID;
+        return AST.start(window._session, window._subject).then(function() {
+          return ArrowFlanker.start(window._session, window._subject);
         }).then(function() {
-          return TrailsB.start(session, subject);
+          return TrailsB.start(window._session, window._subject);
         }).then(function() {
-          return RAT.start(session, subject);
+          return RAT.start(window._session, window._subject);
         });
       });
     };
