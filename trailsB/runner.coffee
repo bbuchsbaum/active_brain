@@ -136,7 +136,7 @@ instructions = """
 
 
 factorSet =
-  trial: [1,2,3,4,5]
+  trial: [1,2]
   #trial: [1,2]
 
 fnode = Psy.FactorSetNode.build(factorSet)

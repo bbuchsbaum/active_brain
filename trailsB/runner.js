@@ -70,7 +70,7 @@
                       RT: ev.RT,
                       timeElapsed: ev.timeElapsed,
                       index: ev.index,
-                      task: "TrailsB",
+                      Task: "TrailsB",
                       trialNumber: context.get("State.trialNumber"),
                       blockNumber: context.get("State.blockNumber"),
                       node: ev.node_id
@@ -152,7 +152,7 @@
   };
 
   factorSet = {
-    trial: [1, 2, 3, 4, 5]
+    trial: [1, 2]
   };
 
   fnode = Psy.FactorSetNode.build(factorSet);
