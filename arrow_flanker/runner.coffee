@@ -42,20 +42,21 @@ _ = Psy._
           ==========================
 
           On every trial a central arrow will appear surrounded by arrows on either side.
-          Your goal is to focus on the central arrow and decide whether it points left or right.
+          Your goal is to **focus on the central arrow** and decide whether it points left or right.
 
-            * If the central arrow points <-- left, press the 'g' key.
+            * If the central arrow points <-- left, press the **'g'** key.
 
-            * If the central arrow points --> right, press the 'h' key.
+            * If the central arrow points --> right, press the **'h'** key.
 
             * If your response is correct, the screen will briefly turn green.
 
             * If your response is incorrect, the screen will briefly turn red.
 
-            * make your decision as fast as you can.
 
-          Press any key to continue
-          -------------------------
+          Answer as quickly and accurately as possible.
+
+          **Press any key to continue**
+
 
           """
           Next:

@@ -19,15 +19,17 @@ _ = Psy._
         1:
           Markdown:
             url: "./design/RAT_instructions_page1.md"
-          Next: AnyKey: {}
+          Next:
+            AnyKey: {}
+        #2:
+        #  Markdown:
+        #    url: "./design/RAT_instructions_page2.md"
+        #  Next: AnyKey: {}
         2:
           Markdown:
-            url: "./design/RAT_instructions_page2.md"
-          Next: AnyKey: {}
-        3:
-          Markdown:
             url: "./design/RAT_instructions_page3.md"
-          Next: AnyKey: {}
+          Next:
+            AnyKey: {}
 
     #Coda:
     #  Events:
@@ -121,17 +123,9 @@ _ = Psy._
                 Timeout: duration: 700
     Part2:
       Start:
-        Text:
-          content: ["Get ready for Part 2!",
-                    "You have 60 seconds to answer as many questions as you can",
-                    "You may answer in any order",
-                    "Press ENTER OR TAB to submit your response",
-                    "Pressing TAB will advance to the next problem",
-                    "",
-                    "Press any key to begin."]
-          origin: "center"
-          position: "center"
-          fontSize: 24
+        Markdown:
+          url: "./design/RAT_instructions_page2.md"
+
         Next:
           AnyKey: {}
 

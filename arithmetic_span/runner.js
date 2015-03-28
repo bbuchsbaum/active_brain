@@ -6,7 +6,7 @@
 
   this.AST = {};
 
-  instructions = "\nArithmetic Systems Task\n==========================\n\nThis will be a test of arithmetic skill. You will be solving basic subtraction and multiplication problems.\nProblems will appear on the screen. Solve the problem, and type the answer using the keyboard.\nThen press enter to proceed to the next question.\n\nAnswer these problems as **quickly as possible** while getting most correct.\n\nType your answer and press ENTER to advance to the next problem.\n\nA few errors are expected given the speed required.\n\nIf you notice you made an error while you are typing, don’t try to correct it, finish typing your answer and move on.\n\nProblems will appear in 2 blocks of 28, 1 of subtraction and 1 of multiplication.\n\nThere will be a short practice set so you can get used to answering.\n\n**Press any key to continue**\n\n";
+  instructions = "\nArithmetic Systems Task\n==========================\n\nThis will be a test of arithmetic skill. You will be solving basic subtraction and multiplication problems.\nProblems will appear on the screen. Solve the problem, and type the answer using the keyboard.\nThen press enter to proceed to the next question.\n\nAnswer as **quickly as possible**.\n\n\nProblems will appear in 2 blocks of 28. 1 of subtraction and 1 of multiplication.\n\nThere will be a short practice set so you can get used to answering.\n\n**Press any key to continue**\n\n";
 
   this.AST.experiment = {
     Define: {
@@ -306,26 +306,24 @@
       if (sessionNumber != null) {
         context.set("sessionNumber", sessionNumber);
       }
-      console.log("session Number", _this.context.get("sessionNumber"));
-      console.log("subject Number", _this.context.get("subjectNumber"));
-      console.log("active_brain", _this.context.get("active_brain"));
+      console.log("session Number", context.get("sessionNumber"));
+      console.log("subject Number", context.get("subjectNumber"));
+      console.log("active_brain", context.get("active_brain"));
       console.log("loading practice");
       design_prac = Psy.loadTable("design/AST_Practice.txt", separator = ",");
       console.log("prac:", design_prac);
       design_sub = Psy.loadTable("design/AST_SubList" + sessionNumber + ".txt", separator = ",");
       design_mul = Psy.loadTable("design/AST_MulList" + sessionNumber + ".txt", separator = ",");
-      console.log("sub:", design_sub);
-      console.log("mult:", design_mul);
       design_sub = design_sub.shuffle();
       design_mul = design_mul.shuffle();
       _this.AST.trialsPart1 = Psy.TrialList.fromBlock(design_sub);
       _this.AST.trialsPart2 = Psy.TrialList.fromBlock(design_mul);
       _this.AST.trialsPractice = Psy.TrialList.fromBlock(design_prac);
-      console.log("sub:", _this.AST.trialsPart1);
-      console.log("mult:", _this.AST.trialsPart2);
       _this.pres = new Psy.Presentation({}, _this.AST.experiment, context);
       return _this.pres.start();
     };
   })(this);
 
 }).call(this);
+
+//# sourceMappingURL=runner.map

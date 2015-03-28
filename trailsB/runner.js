@@ -6,7 +6,7 @@
 
   this.TrailsB = {};
 
-  instructions = "\nTrail Making Task\n==========================\n\nIn this task you will make a \"trail\" connecting circles in a particular order.\n\nYou will see a number circles appear on the screen. Each circle will have a number (1,2,3 ...) or a letter inside.\n\nYour goal is to make a trail linking all the numbered circles and lettered circles alternating in order between numbers and letters.\n\nThus, you will first look for the circle with \"1\" inside, click it, and then find \"A\" and click that.\n\nNext you will click 2 and then \"B\", and so on until you have connected all the circles.\n\nTo make a path between two circles, simply click the next circle in the path.\n\nWhen you select the correct circle, it will turn yellow. When you complete the trail, the final circle will turn red.\n\n\nPress any key to continue\n-------------------------\n";
+  instructions = "\nTrail Making Task\n==========================\n\nIn this task you will make a \"trail\" connecting circles in a particular order.\n\nYou will see a number circles appear on the screen. Each circle will have a number (1,2,3 ...) or a letter inside.\n\nYour goal is to make a trail linking all the numbered circles and lettered circles alternating in order between numbers and letters.\n\nFor example: 1 -> A -> 2 -> B -> 3 -> C\n\nTo make a path between two circles, simply click the next circle in the path.\n\nWhen you select the correct circle, it will turn yellow. When you complete the trail, the final circle will turn red.\n\n\nPress any key to continue\n-------------------------\n";
 
   this.TrailsB.experiment = {
     Define: {
@@ -169,3 +169,5 @@
   })(this);
 
 }).call(this);
+
+//# sourceMappingURL=runner.map

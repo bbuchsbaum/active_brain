@@ -25,14 +25,6 @@
           },
           2: {
             Markdown: {
-              url: "./design/RAT_instructions_page2.md"
-            },
-            Next: {
-              AnyKey: {}
-            }
-          },
-          3: {
-            Markdown: {
               url: "./design/RAT_instructions_page3.md"
             },
             Next: {
@@ -143,11 +135,8 @@
       },
       Part2: {
         Start: {
-          Text: {
-            content: ["Get ready for Part 2!", "You have 60 seconds to answer as many questions as you can", "You may answer in any order", "Press ENTER OR TAB to submit your response", "Pressing TAB will advance to the next problem", "", "Press any key to begin."],
-            origin: "center",
-            position: "center",
-            fontSize: 24
+          Markdown: {
+            url: "./design/RAT_instructions_page2.md"
           },
           Next: {
             AnyKey: {}
@@ -283,3 +272,5 @@
   })(this);
 
 }).call(this);
+
+//# sourceMappingURL=runner.map
