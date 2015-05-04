@@ -20,7 +20,6 @@ _ = Psy._
           Markdown:
             url: "./design/RAT_instructions_page1.md"
           Next: AnyKey: {}
-
     Prelude2:
       Events:
         1:
