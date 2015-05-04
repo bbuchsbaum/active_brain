@@ -84,6 +84,7 @@ _ = Psy._
           1:
             Question:
               x: @screen.center.x
+
               y: @screen.center.y
               headerSize: "small"
               #position: "center"
@@ -218,7 +219,7 @@ _ = Psy._
               question: record.Stimulus.toUpperCase()
               id: "question_" + (i+1)
               type: "textfield"
-
+              focus: if i == 0 then true else false
               react:
                 change: (el) ->
                   resultObj = context.get("resultObject2")

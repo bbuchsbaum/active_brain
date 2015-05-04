@@ -248,6 +248,7 @@
                 question: record.Stimulus.toUpperCase(),
                 id: "question_" + (i + 1),
                 type: "textfield",
+                focus: i === 0 ? true : false,
                 react: {
                   change: function(el) {
                     var index, res, resultObj;
