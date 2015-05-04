@@ -1,0 +1,27 @@
+<component name="libraryTable">
+  <library name="Generated files" type="javaScript">
+    <properties>
+      <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/arrow_flanker/runner.js" />
+        <item url="file://$PROJECT_DIR$/remote_associates/runner.js" />
+        <item url="file://$PROJECT_DIR$/junk.js" />
+        <item url="file://$PROJECT_DIR$/arithmetic_span/runner.js" />
+        <item url="file://$PROJECT_DIR$/done/runner.js" />
+        <item url="file://$PROJECT_DIR$/start/runner.js" />
+        <item url="file://$PROJECT_DIR$/trailsB/runner.js" />
+        <item url="file://$PROJECT_DIR$/activeb_master.js" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/arrow_flanker/runner.js" />
+      <root url="file://$PROJECT_DIR$/remote_associates/runner.js" />
+      <root url="file://$PROJECT_DIR$/junk.js" />
+      <root url="file://$PROJECT_DIR$/arithmetic_span/runner.js" />
+      <root url="file://$PROJECT_DIR$/done/runner.js" />
+      <root url="file://$PROJECT_DIR$/start/runner.js" />
+      <root url="file://$PROJECT_DIR$/trailsB/runner.js" />
+      <root url="file://$PROJECT_DIR$/activeb_master.js" />
+    </CLASSES>
+    <SOURCES />
+  </library>
+</component>
