@@ -315,7 +315,20 @@
       console.log("loading practice");
       design_prac = Psy.loadTable("design/AST_Practice.txt", separator = ",");
       console.log("prac:", design_prac);
-      listNumber = (sessionNumber % 4) + 1;
+      listNumber = (function() {
+        switch (sessionNumber) {
+          case 1:
+            return 1;
+          case 2:
+            return 2;
+          case 3:
+            return 1;
+          case 4:
+            return 2;
+          default:
+            return 1;
+        }
+      })();
       design_sub = Psy.loadTable("design/AST_SubList" + listNumber + ".txt", separator = ",");
       design_mul = Psy.loadTable("design/AST_MulList" + listNumber + ".txt", separator = ",");
       design_sub = design_sub.shuffle();

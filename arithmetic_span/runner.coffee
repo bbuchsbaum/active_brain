@@ -272,7 +272,14 @@ instructions = """
   design_prac = Psy.loadTable("design/AST_Practice.txt", separator=",")
   console.log("prac:", design_prac)
 
-  listNumber = (sessionNumber % 4) + 1
+  listNumber =
+    switch sessionNumber
+      when 1 then 1
+      when 2 then 2
+      when 3 then 1
+      when 4 then 2
+      else 1
+
   design_sub = Psy.loadTable("design/AST_SubList" + listNumber + ".txt", separator=",")
   design_mul = Psy.loadTable("design/AST_MulList" + listNumber + ".txt", separator=",")
 
