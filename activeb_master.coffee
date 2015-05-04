@@ -46,11 +46,10 @@ Active_Brain.start = (subject, session) =>
   tasks = [AST, ArrowFlanker, TrailsB, RAT]
   order = getOrder(orderIndex)[session-1]
 
-  taskSet = for ind in order
+  window.taskSet = for ind in order
     tasks[ind-1]
 
-
-  window.taskSet = _.shuffle([AST, ArrowFlanker, TrailsB, RAT])
+  #window.taskSet = _.shuffle([AST, ArrowFlanker, TrailsB, RAT])
   getSession()
   .then( (session) ->
     window._session = Number(session.data.ID)

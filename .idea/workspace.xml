@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="25b224a4-6346-4ffc-9249-b3b4469dbe94" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/activeb_master.coffee" afterPath="$PROJECT_DIR$/activeb_master.coffee" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/activeb_master.js" afterPath="$PROJECT_DIR$/activeb_master.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/arithmetic_span/runner.coffee" afterPath="$PROJECT_DIR$/arithmetic_span/runner.coffee" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/arithmetic_span/runner.js" afterPath="$PROJECT_DIR$/arithmetic_span/runner.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -25,15 +27,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="runner.coffee" pinned="false" current-in-tab="true">
+      <file leaf-file-name="runner.coffee" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/arithmetic_span/runner.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.80473375">
-              <caret line="277" column="35" selection-start-line="277" selection-start-column="35" selection-end-line="277" selection-end-column="35" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="261" column="47" selection-start-line="261" selection-start-column="47" selection-end-line="261" selection-end-column="47" />
               <folding>
-                <marker date="1430748138000" expanded="true" signature="69:530" placeholder="..." />
-                <marker date="1430748138000" expanded="true" signature="69:774" placeholder="..." />
+                <marker date="1430748235000" expanded="true" signature="69:530" placeholder="..." />
+                <marker date="1430748235000" expanded="true" signature="69:774" placeholder="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/arithmetic_span/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-10.769231">
+              <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="activeb_master.coffee" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/activeb_master.coffee">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="51" column="3" selection-start-line="51" selection-start-column="3" selection-end-line="51" selection-end-column="3" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -88,31 +110,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="activeb_master.coffee" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/activeb_master.coffee">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="27" column="15" selection-start-line="27" selection-start-column="15" selection-end-line="27" selection-end-column="15" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
+            <state vertical-scroll-proportion="0.0">
               <caret line="0" column="15" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/trailsB/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.8461537">
-              <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -159,10 +161,10 @@
         <option value="$PROJECT_DIR$/design/RAT_instructions_page2.md" />
         <option value="$PROJECT_DIR$/start/runner.coffee" />
         <option value="$PROJECT_DIR$/junk.coffee" />
-        <option value="$PROJECT_DIR$/activeb_master.coffee" />
         <option value="$PROJECT_DIR$/remote_associates/runner.coffee" />
         <option value="$PROJECT_DIR$/trailsB/runner.coffee" />
         <option value="$PROJECT_DIR$/arithmetic_span/runner.coffee" />
+        <option value="$PROJECT_DIR$/activeb_master.coffee" />
       </list>
     </option>
   </component>
@@ -413,7 +415,13 @@
       <option name="project" value="LOCAL" />
       <updated>1430747814360</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Bug fixes for April&#10;&#10;">
+      <created>1430748207172</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1430748207172</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -494,8 +502,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1430748138000" expanded="true" signature="69:530" placeholder="..." />
-            <marker date="1430748138000" expanded="true" signature="69:774" placeholder="..." />
+            <marker date="1430748235000" expanded="true" signature="69:530" placeholder="..." />
+            <marker date="1430748235000" expanded="true" signature="69:774" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -599,14 +607,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="24" column="4" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/arithmetic_span/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="7" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -814,38 +814,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/activeb_master.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="15" selection-start-line="27" selection-start-column="15" selection-end-line="27" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="15" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/trailsB/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.8461537">
           <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trailsB/runner.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="239" column="14" selection-start-line="239" selection-start-column="14" selection-end-line="239" selection-end-column="14" />
-          <folding>
-            <marker date="1430747731000" expanded="true" signature="158:1012" placeholder="..." />
-            <marker date="1430747731000" expanded="true" signature="1076:1939" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -891,12 +864,47 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/arithmetic_span/runner.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.80473375">
-          <caret line="277" column="35" selection-start-line="277" selection-start-column="35" selection-end-line="277" selection-end-column="35" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="261" column="47" selection-start-line="261" selection-start-column="47" selection-end-line="261" selection-end-column="47" />
           <folding>
-            <marker date="1430748138000" expanded="true" signature="69:530" placeholder="..." />
-            <marker date="1430748138000" expanded="true" signature="69:774" placeholder="..." />
+            <marker date="1430748235000" expanded="true" signature="69:530" placeholder="..." />
+            <marker date="1430748235000" expanded="true" signature="69:774" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/arithmetic_span/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.769231">
+          <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trailsB/runner.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="239" column="14" selection-start-line="239" selection-start-column="14" selection-end-line="239" selection-end-column="14" />
+          <folding>
+            <marker date="1430747731000" expanded="true" signature="158:1012" placeholder="..." />
+            <marker date="1430747731000" expanded="true" signature="1076:1939" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activeb_master.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="51" column="3" selection-start-line="51" selection-start-column="3" selection-end-line="51" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="15" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
+          <folding />
         </state>
       </provider>
     </entry>

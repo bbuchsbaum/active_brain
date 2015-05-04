@@ -57,11 +57,11 @@
 
   Active_Brain.start = (function(_this) {
     return function(subject, session) {
-      var ind, order, orderIndex, taskSet, tasks;
+      var ind, order, orderIndex, tasks;
       orderIndex = subject % 4;
       tasks = [AST, ArrowFlanker, TrailsB, RAT];
       order = getOrder(orderIndex)[session - 1];
-      taskSet = (function() {
+      window.taskSet = (function() {
         var _i, _len, _results;
         _results = [];
         for (_i = 0, _len = order.length; _i < _len; _i++) {
@@ -70,7 +70,6 @@
         }
         return _results;
       })();
-      window.taskSet = _.shuffle([AST, ArrowFlanker, TrailsB, RAT]);
       return getSession().then(function(session) {
         window._session = Number(session.data.ID);
         return getSubject();

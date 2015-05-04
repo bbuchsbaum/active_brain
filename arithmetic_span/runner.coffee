@@ -260,6 +260,8 @@ instructions = """
 
   if sessionNumber?
     context.set("sessionNumber", sessionNumber)
+  else
+    sessionNumber = 1
 
   console.log("session Number", context.get("sessionNumber"))
   console.log("subject Number", context.get("subjectNumber"))
