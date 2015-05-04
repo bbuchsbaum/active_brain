@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="25b224a4-6346-4ffc-9249-b3b4469dbe94" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/remote_associates/runner.coffee" afterPath="$PROJECT_DIR$/remote_associates/runner.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/trailsB/runner.coffee" afterPath="$PROJECT_DIR$/trailsB/runner.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/remote_associates/runner.js" afterPath="$PROJECT_DIR$/remote_associates/runner.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/trailsB/runner.js" afterPath="$PROJECT_DIR$/trailsB/runner.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/arithmetic_span/runner.coffee" afterPath="$PROJECT_DIR$/arithmetic_span/runner.coffee" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/arithmetic_span/runner.js" afterPath="$PROJECT_DIR$/arithmetic_span/runner.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="active_brain.iws" />
@@ -30,11 +28,11 @@
       <file leaf-file-name="runner.coffee" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/arithmetic_span/runner.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4733728">
-              <caret line="160" column="22" selection-start-line="160" selection-start-column="22" selection-end-line="160" selection-end-column="22" />
+            <state vertical-scroll-proportion="0.80473375">
+              <caret line="277" column="35" selection-start-line="277" selection-start-column="35" selection-end-line="277" selection-end-column="35" />
               <folding>
-                <marker date="1430746375000" expanded="true" signature="69:530" placeholder="..." />
-                <marker date="1430746375000" expanded="true" signature="69:774" placeholder="..." />
+                <marker date="1430748138000" expanded="true" signature="69:530" placeholder="..." />
+                <marker date="1430748138000" expanded="true" signature="69:774" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -162,9 +160,9 @@
         <option value="$PROJECT_DIR$/start/runner.coffee" />
         <option value="$PROJECT_DIR$/junk.coffee" />
         <option value="$PROJECT_DIR$/activeb_master.coffee" />
-        <option value="$PROJECT_DIR$/arithmetic_span/runner.coffee" />
         <option value="$PROJECT_DIR$/remote_associates/runner.coffee" />
         <option value="$PROJECT_DIR$/trailsB/runner.coffee" />
+        <option value="$PROJECT_DIR$/arithmetic_span/runner.coffee" />
       </list>
     </option>
   </component>
@@ -409,7 +407,13 @@
       <option name="project" value="LOCAL" />
       <updated>1430746532498</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Bug fixes for April&#10;&#10;">
+      <created>1430747814360</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1430747814360</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -490,8 +494,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1430746375000" expanded="true" signature="69:530" placeholder="..." />
-            <marker date="1430746375000" expanded="true" signature="69:774" placeholder="..." />
+            <marker date="1430748138000" expanded="true" signature="69:530" placeholder="..." />
+            <marker date="1430748138000" expanded="true" signature="69:774" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -845,6 +849,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/arithmetic_span/design/AST_Practice.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/arithmetic_span/design/AST_MulList1.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -861,7 +873,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/arithmetic_span/design/AST_Practice.txt">
+    <entry file="file://$PROJECT_DIR$/arithmetic_span/design/AST_SubList2.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -877,21 +889,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/arithmetic_span/design/AST_SubList2.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/arithmetic_span/runner.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4733728">
-          <caret line="160" column="22" selection-start-line="160" selection-start-column="22" selection-end-line="160" selection-end-column="22" />
+        <state vertical-scroll-proportion="0.80473375">
+          <caret line="277" column="35" selection-start-line="277" selection-start-column="35" selection-end-line="277" selection-end-column="35" />
           <folding>
-            <marker date="1430746375000" expanded="true" signature="69:530" placeholder="..." />
-            <marker date="1430746375000" expanded="true" signature="69:774" placeholder="..." />
+            <marker date="1430748138000" expanded="true" signature="69:530" placeholder="..." />
+            <marker date="1430748138000" expanded="true" signature="69:774" placeholder="..." />
           </folding>
         </state>
       </provider>

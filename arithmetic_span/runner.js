@@ -295,7 +295,7 @@
 
   this.AST.start = (function(_this) {
     return function(sessionNumber, subjectNumber) {
-      var context, design_mul, design_prac, design_sub, separator;
+      var context, design_mul, design_prac, design_sub, listNumber, separator;
       context = new Psy.createContext();
       if (subjectNumber != null) {
         context.set("active_brain", true);
@@ -313,8 +313,9 @@
       console.log("loading practice");
       design_prac = Psy.loadTable("design/AST_Practice.txt", separator = ",");
       console.log("prac:", design_prac);
-      design_sub = Psy.loadTable("design/AST_SubList" + sessionNumber + ".txt", separator = ",");
-      design_mul = Psy.loadTable("design/AST_MulList" + sessionNumber + ".txt", separator = ",");
+      listNumber = (sessionNumber % 4) + 1;
+      design_sub = Psy.loadTable("design/AST_SubList" + listNumber + ".txt", separator = ",");
+      design_mul = Psy.loadTable("design/AST_MulList" + listNumber + ".txt", separator = ",");
       design_sub = design_sub.shuffle();
       design_mul = design_mul.shuffle();
       _this.AST.trialsPart1 = Psy.TrialList.fromBlock(design_sub);

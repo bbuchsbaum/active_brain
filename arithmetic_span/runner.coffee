@@ -270,8 +270,9 @@ instructions = """
   design_prac = Psy.loadTable("design/AST_Practice.txt", separator=",")
   console.log("prac:", design_prac)
 
-  design_sub = Psy.loadTable("design/AST_SubList" + sessionNumber + ".txt", separator=",")
-  design_mul = Psy.loadTable("design/AST_MulList" + sessionNumber + ".txt", separator=",")
+  listNumber = (sessionNumber % 4) + 1
+  design_sub = Psy.loadTable("design/AST_SubList" + listNumber + ".txt", separator=",")
+  design_mul = Psy.loadTable("design/AST_MulList" + listNumber + ".txt", separator=",")
 
 
   design_sub = design_sub.shuffle()
