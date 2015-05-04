@@ -21,15 +21,10 @@ instructions = """
           Problems will appear on the screen. Solve the problem, and type the answer using the keyboard.
           Then press enter to proceed to the next question.
 
-          Answer these problems as **quickly as possible** while getting most correct.
+          Answer as **quickly as possible**.
 
-          Type your answer and press ENTER to advance to the next problem.
 
-          A few errors are expected given the speed required.
-
-          If you notice you made an error while you are typing, don’t try to correct it, finish typing your answer and move on.
-
-          Problems will appear in 2 blocks of 28, 1 of subtraction and 1 of multiplication.
+          Problems will appear in 2 blocks of 28. 1 of subtraction and 1 of multiplication.
 
           There will be a short practice set so you can get used to answering.
 
@@ -266,9 +261,9 @@ instructions = """
   if sessionNumber?
     context.set("sessionNumber", sessionNumber)
 
-  console.log("session Number", @context.get("sessionNumber"))
-  console.log("subject Number", @context.get("subjectNumber"))
-  console.log("active_brain", @context.get("active_brain"))
+  console.log("session Number", context.get("sessionNumber"))
+  console.log("subject Number", context.get("subjectNumber"))
+  console.log("active_brain", context.get("active_brain"))
 
   console.log("loading practice")
 
@@ -278,8 +273,6 @@ instructions = """
   design_sub = Psy.loadTable("design/AST_SubList" + sessionNumber + ".txt", separator=",")
   design_mul = Psy.loadTable("design/AST_MulList" + sessionNumber + ".txt", separator=",")
 
-  console.log("sub:", design_sub)
-  console.log("mult:", design_mul)
 
   design_sub = design_sub.shuffle()
   design_mul = design_mul.shuffle()
@@ -291,8 +284,7 @@ instructions = """
 
   @AST.trialsPractice = Psy.TrialList.fromBlock(design_prac)
 
-  console.log("sub:", @AST.trialsPart1)
-  console.log("mult:", @AST.trialsPart2)
+
   @pres = new Psy.Presentation({}, @AST.experiment, context)
   @pres.start()
 
