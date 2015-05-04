@@ -6,7 +6,7 @@
 
   this.AST = {};
 
-  instructions = "\nArithmetic Systems Task\n==========================\n\nThis will be a test of arithmetic skill. You will be solving basic subtraction and multiplication problems.\nProblems will appear on the screen. Solve the problem, and type the answer using the keyboard.\nThen press enter to proceed to the next question.\n\nAnswer these problems as **quickly as possible** while getting most correct.\n\nType your answer and press ENTER to advance to the next problem.\n\nA few errors are expected given the speed required.\n\nIf you notice you made an error while you are typing, don’t try to correct it, finish typing your answer and move on.\n\nProblems will appear in 2 blocks of 28, 1 of subtraction and 1 of multiplication.\n\nThere will be a short practice set so you can get used to answering.\n\n**Press any key to continue**\n\n";
+  instructions = "<p>\n<p>\n\n**STOP!!**\n\n**READ** the following Instructions **CAREFULLY**\n\n\nArithmetic Systems Task\n==========================\n\n\nThis will be a test of arithmetic skill. You will be solving basic subtraction and multiplication problems.\nProblems will appear on the screen. Solve the problem, and type the answer using the keyboard.\nThen press enter to proceed to the next question.\n\nAnswer these problems as **quickly as possible** while getting most correct.\n\nType your answer and press ENTER to advance to the next problem.\n\nA few errors are expected given the speed required.\n\nIf you notice you made an error while you are typing, don’t try to correct it, finish typing your answer and move on.\n\nProblems will appear in 2 blocks of 28, 1 of subtraction and 1 of multiplication.\n\nThere will be a short practice set so you can get used to answering.\n\n**Press any key to continue**\n\n";
 
   this.AST.experiment = {
     Define: {
@@ -155,8 +155,8 @@
             console.log(this.response);
             if (this.context.get("task") === "practice") {
               message = this.response[1].event === "timeout" ? "Too Slow" : this.response[1].event.val === this.response[1].trial.Answer ? "Correct!" : "Incorrect!";
-              if (this.response[1].RT > 2000) {
-                message += " -- Too slow!";
+              if (this.response[1].RT > 4000) {
+                message += " -- Try to go faster!";
               }
               return {
                 Text: {
@@ -202,6 +202,7 @@
                         Correct: obj.event.val === obj.trial.Answer,
                         ProblemID: obj.trial.ProblemID,
                         Problem: obj.trial.Problem,
+                        Size: obj.trial.Size,
                         Task: "Arithmetic"
                       });
                     }

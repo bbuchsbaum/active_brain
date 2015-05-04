@@ -2,10 +2,20 @@ _ = Psy._
 @AST = {}
 
 
+
+
 instructions = """
+          <p>
+          <p>
+
+          **STOP!!**
+
+          **READ** the following Instructions **CAREFULLY**
+
 
           Arithmetic Systems Task
           ==========================
+
 
           This will be a test of arithmetic skill. You will be solving basic subtraction and multiplication problems.
           Problems will appear on the screen. Solve the problem, and type the answer using the keyboard.
@@ -157,8 +167,8 @@ instructions = """
           else
             "Incorrect!"
 
-          if @response[1].RT > 2000
-            message += " -- Too slow!"
+          if @response[1].RT > 4000
+            message += " -- Try to go faster!"
           Text:
             content: message
             position: "center"
@@ -185,6 +195,7 @@ instructions = """
                 Correct: obj.event.val == obj.trial.Answer
                 ProblemID: obj.trial.ProblemID
                 Problem: obj.trial.Problem
+                Size: obj.trial.Size
                 Task: "Arithmetic"
               console.log("logdat", logdat)
               context.set("resultObject", logdat)

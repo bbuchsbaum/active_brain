@@ -14,17 +14,23 @@ _ = Psy._
     resultObject2: []
 
   Routines:
-    Prelude:
+    Prelude1:
       Events:
         1:
           Markdown:
             url: "./design/RAT_instructions_page1.md"
           Next: AnyKey: {}
-        2:
+
+    Prelude2:
+      Events:
+        1:
           Markdown:
             url: "./design/RAT_instructions_page2.md"
           Next: AnyKey: {}
-        3:
+
+    Prelude3:
+      Events:
+        1:
           Markdown:
             url: "./design/RAT_instructions_page3.md"
           Next: AnyKey: {}
@@ -44,8 +50,9 @@ _ = Psy._
 
       Start:
         Text:
-          content: "Press any key to start"
+          content: "Press any key when you are ready to begin."
           position: "center"
+          fontSize: 24
           origin: "center"
         Next:
           AnyKey: {}
@@ -58,6 +65,19 @@ _ = Psy._
           origin: "center"
         Next:
           AnyKey: {}
+
+      PracticeEnd:
+        Text:
+          content: ["Solution: *Lawn* mower / *Lawn* gnome / *Lawn* fertilizer",
+                    "",
+                    "",
+                    "Remember to answer as quickly as possible. Press any key to continue"]
+          position: "center"
+          fontSize: 20
+          origin: "center"
+        Next:
+          AnyKey: {}
+
 
 
       Trial: ->
@@ -93,6 +113,7 @@ _ = Psy._
           Receiver:
             id: "nextbutton"
             signal: "clicked"
+            timeout: 60000
 
         Feedback: ->
           correct =  @context.get("choice") is @trial.solution
@@ -123,10 +144,6 @@ _ = Psy._
       Start:
         Text:
           content: ["Get ready for Part 2!",
-                    "You have 60 seconds to answer as many questions as you can",
-                    "You may answer in any order",
-                    "Press ENTER OR TAB to submit your response",
-                    "Pressing TAB will advance to the next problem",
                     "",
                     "Press any key to begin."]
           origin: "center"
@@ -143,6 +160,46 @@ _ = Psy._
           fontSize: 20
         Next:
           AnyKey: {}
+
+      PracticeEnd:
+        Text:
+          content: [
+                    "Solution: Fried *Chicken* / *Chicken* Dumpling / *Chicken* Out)",
+                    "",
+                    "",
+                    "Press any key to continue"]
+          position: "center"
+          fontSize: 20
+          origin: "center"
+        Next:
+          AnyKey: {}
+
+
+      TrialPractice: ->
+        context = @context
+        Events:
+          1:
+            Question:
+              x: "5%"
+              y: "33%"
+              width: "50%"
+              headerSize: "small"
+              question: @trial.Stimulus.toUpperCase()
+              id: "practice_question"
+              type: "textfield"
+              react:
+                change: (el) ->
+                  context.set("practiceResponse", el)
+
+            Next:
+              Receiver:
+                id: "practice_question"
+                signal: "change"
+                timeout: 10000
+
+        Feedback: ->
+          console.log("practiceResponse", context.get("practiceResponse"))
+          console.log("response", @response)
 
       Trial: ->
         questions = {}
@@ -207,27 +264,42 @@ _ = Psy._
 
 
   Flow: (routines) =>
-    1: routines.Prelude
+    1: routines.Prelude1
     2: BlockSequence:
+        trialList: @RAT.trialsPractice
+        trial: routines.Part1.Trial
+        end: routines.Part1.PracticeEnd
+    3: BlockSequence:
         start: routines.Part1.Start
         trialList: @RAT.trialsPart1
         trial: routines.Part1.Trial
         end: routines.Part1.End
-    3: BlockSequence:
+    4: routines.Prelude2
+    5: BlockSequence:
+        trialList: @RAT.trialsPractice2
+        trial: routines.Part2.TrialPractice
+        end: routines.Part2.PracticeEnd
+    6: routines.Prelude3
+    7: BlockSequence:
         start: routines.Part2.Start
         trialList: @RAT.dummyTrials
         trial: routines.Part2.Trial
         end: routines.Part2.End
     #4: routines.Coda
-    4: routines.Save
+    8: routines.Save
 
 @RAT.start = (sessionNumber, subjectNumber) =>
-  if sessionNumber > 2
-    sessionNumber = 2
+  if sessionNumber > 4
+    console.log("warning: sessionNumber > 4, resetting to 1")
+    sessionNumber = 1
 
   design_recog = Psy.loadTable("design/RAT_RecList" + sessionNumber + ".txt", ",")
   design_gen = Psy.loadTable("design/RAT_GenList" + sessionNumber + ".txt", ",")
+  design_prac = Psy.loadTable("design/RAT_PracList.txt", ",")
+  design_prac2 = Psy.loadTable("design/RAT_PracList2.txt", ",")
 
+  @RAT.trialsPractice = Psy.TrialList.fromBlock(design_prac)
+  @RAT.trialsPractice2 = Psy.TrialList.fromBlock(design_prac2)
   @RAT.trialsPart1 = Psy.TrialList.fromBlock(design_recog)
   @RAT.trialsPart2 = Psy.TrialList.fromBlock(design_gen)
 

@@ -3,27 +3,6 @@
 
 _ = Psy._
 
-###
-
-  Task:
-    name: "arrow_flanker"
-
-    Conditions:
-      Crossed:
-          flanker:
-            levels: ["congruent", "incongruent"]
-          centerArrow:
-            levels: ["left", "right"]
-      Uncrossed:
-          flankerArrow:
-            levels: ["left", "right"]
-            choose: (trial) -> ...
-    Items:
-      flankerArrow:
-
-
-###
-
 
 
 @ArrowFlanker = {}
@@ -38,15 +17,22 @@ _ = Psy._
         1:
           Markdown: """
 
+          <p>
+          <p>
+
+          **STOP!!**
+
+          **READ** the following Instructions **CAREFULLY**
+
           Flanker Task
           ==========================
 
           On every trial a central arrow will appear surrounded by arrows on either side.
           Your goal is to focus on the central arrow and decide whether it points left or right.
 
-            * If the central arrow points <-- left, press the 'g' key.
+            * If the central arrow points <-- left, press the **left arrow** key.
 
-            * If the central arrow points --> right, press the 'h' key.
+            * If the central arrow points --> right, press the **right arrow** key.
 
             * If your response is correct, the screen will briefly turn green.
 
@@ -117,8 +103,8 @@ _ = Psy._
           Next:
             KeyPress:
               id: "answer"
-              keys: ['g', 'h']
-              correct: if @trial.centerArrow is "left" then 'g' else 'h'
+              keys: ['left', 'right']
+              correct: if @trial.centerArrow is "left" then 'left' else 'right'
               timeout: 1500
 
       Feedback: ->
@@ -202,7 +188,7 @@ factorSet =
 fnode = Psy.FactorSetNode.build(factorSet)
 
 # create 4 blocks of trials with 4 complete replications per block
-trials = fnode.trialList(4, 4)
+trials = fnode.trialList(3, 4)
 
 
 trials = trials.bind (record) ->

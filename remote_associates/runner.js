@@ -13,7 +13,7 @@
       resultObject2: []
     },
     Routines: {
-      Prelude: {
+      Prelude1: {
         Events: {
           1: {
             Markdown: {
@@ -22,16 +22,24 @@
             Next: {
               AnyKey: {}
             }
-          },
-          2: {
+          }
+        }
+      },
+      Prelude2: {
+        Events: {
+          1: {
             Markdown: {
               url: "./design/RAT_instructions_page2.md"
             },
             Next: {
               AnyKey: {}
             }
-          },
-          3: {
+          }
+        }
+      },
+      Prelude3: {
+        Events: {
+          1: {
             Markdown: {
               url: "./design/RAT_instructions_page3.md"
             },
@@ -44,8 +52,9 @@
       Part1: {
         Start: {
           Text: {
-            content: "Press any key to start",
+            content: "Press any key when you are ready to begin.",
             position: "center",
+            fontSize: 24,
             origin: "center"
           },
           Next: {
@@ -55,6 +64,17 @@
         End: {
           Text: {
             content: ["End of Part 1", "Press any key to continue."],
+            position: "center",
+            fontSize: 20,
+            origin: "center"
+          },
+          Next: {
+            AnyKey: {}
+          }
+        },
+        PracticeEnd: {
+          Text: {
+            content: ["Solution: *Lawn* mower / *Lawn* gnome / *Lawn* fertilizer", "", "", "Remember to answer as quickly as possible. Press any key to continue"],
             position: "center",
             fontSize: 20,
             origin: "center"
@@ -101,7 +121,8 @@
             Next: {
               Receiver: {
                 id: "nextbutton",
-                signal: "clicked"
+                signal: "clicked",
+                timeout: 60000
               }
             },
             Feedback: function() {
@@ -144,7 +165,7 @@
       Part2: {
         Start: {
           Text: {
-            content: ["Get ready for Part 2!", "You have 60 seconds to answer as many questions as you can", "You may answer in any order", "Press ENTER OR TAB to submit your response", "Pressing TAB will advance to the next problem", "", "Press any key to begin."],
+            content: ["Get ready for Part 2!", "", "Press any key to begin."],
             origin: "center",
             position: "center",
             fontSize: 24
@@ -163,6 +184,52 @@
           Next: {
             AnyKey: {}
           }
+        },
+        PracticeEnd: {
+          Text: {
+            content: ["Solution: Fried *Chicken* / *Chicken* Dumpling / *Chicken* Out)", "", "", "Press any key to continue"],
+            position: "center",
+            fontSize: 20,
+            origin: "center"
+          },
+          Next: {
+            AnyKey: {}
+          }
+        },
+        TrialPractice: function() {
+          var context;
+          context = this.context;
+          return {
+            Events: {
+              1: {
+                Question: {
+                  x: "5%",
+                  y: "33%",
+                  width: "50%",
+                  headerSize: "small",
+                  question: this.trial.Stimulus.toUpperCase(),
+                  id: "practice_question",
+                  type: "textfield",
+                  react: {
+                    change: function(el) {
+                      return context.set("practiceResponse", el);
+                    }
+                  }
+                },
+                Next: {
+                  Receiver: {
+                    id: "practice_question",
+                    signal: "change",
+                    timeout: 10000
+                  }
+                }
+              }
+            },
+            Feedback: function() {
+              console.log("practiceResponse", context.get("practiceResponse"));
+              return console.log("response", this.response);
+            }
+          };
         },
         Trial: function() {
           var block, context, questions;
@@ -241,8 +308,15 @@
     Flow: (function(_this) {
       return function(routines) {
         return {
-          1: routines.Prelude,
+          1: routines.Prelude1,
           2: {
+            BlockSequence: {
+              trialList: _this.RAT.trialsPractice,
+              trial: routines.Part1.Trial,
+              end: routines.Part1.PracticeEnd
+            }
+          },
+          3: {
             BlockSequence: {
               start: routines.Part1.Start,
               trialList: _this.RAT.trialsPart1,
@@ -250,7 +324,16 @@
               end: routines.Part1.End
             }
           },
-          3: {
+          4: routines.Prelude2,
+          5: {
+            BlockSequence: {
+              trialList: _this.RAT.trialsPractice2,
+              trial: routines.Part2.TrialPractice,
+              end: routines.Part2.PracticeEnd
+            }
+          },
+          6: routines.Prelude3,
+          7: {
             BlockSequence: {
               start: routines.Part2.Start,
               trialList: _this.RAT.dummyTrials,
@@ -258,7 +341,7 @@
               end: routines.Part2.End
             }
           },
-          4: routines.Save
+          8: routines.Save
         };
       };
     })(this)
@@ -266,12 +349,17 @@
 
   this.RAT.start = (function(_this) {
     return function(sessionNumber, subjectNumber) {
-      var design_gen, design_recog, pres;
-      if (sessionNumber > 2) {
-        sessionNumber = 2;
+      var design_gen, design_prac, design_prac2, design_recog, pres;
+      if (sessionNumber > 4) {
+        console.log("warning: sessionNumber > 4, resetting to 1");
+        sessionNumber = 1;
       }
       design_recog = Psy.loadTable("design/RAT_RecList" + sessionNumber + ".txt", ",");
       design_gen = Psy.loadTable("design/RAT_GenList" + sessionNumber + ".txt", ",");
+      design_prac = Psy.loadTable("design/RAT_PracList.txt", ",");
+      design_prac2 = Psy.loadTable("design/RAT_PracList2.txt", ",");
+      _this.RAT.trialsPractice = Psy.TrialList.fromBlock(design_prac);
+      _this.RAT.trialsPractice2 = Psy.TrialList.fromBlock(design_prac2);
       _this.RAT.trialsPart1 = Psy.TrialList.fromBlock(design_recog);
       _this.RAT.trialsPart2 = Psy.TrialList.fromBlock(design_gen);
       _this.RAT.dummyTrials = new Psy.TrialList(1);
