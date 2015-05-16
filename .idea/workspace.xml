@@ -2,18 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="25b224a4-6346-4ffc-9249-b3b4469dbe94" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/design/RAT_instructions_page1.md" afterPath="$PROJECT_DIR$/design/RAT_instructions_page1.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/activeb_master.coffee" afterPath="$PROJECT_DIR$/activeb_master.coffee" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/activeb_master.js" afterPath="$PROJECT_DIR$/activeb_master.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/arithmetic_span/runner.coffee" afterPath="$PROJECT_DIR$/arithmetic_span/runner.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/arrow_flanker/runner.coffee" afterPath="$PROJECT_DIR$/arrow_flanker/runner.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/remote_associates/runner.coffee" afterPath="$PROJECT_DIR$/remote_associates/runner.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/trailsB/runner.coffee" afterPath="$PROJECT_DIR$/trailsB/runner.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/arithmetic_span/runner.js" afterPath="$PROJECT_DIR$/arithmetic_span/runner.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/arrow_flanker/runner.js" afterPath="$PROJECT_DIR$/arrow_flanker/runner.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/remote_associates/runner.js" afterPath="$PROJECT_DIR$/remote_associates/runner.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/trailsB/runner.js" afterPath="$PROJECT_DIR$/trailsB/runner.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="active_brain.iws" />
@@ -58,11 +49,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="activeb_master.coffee" pinned="false" current-in-tab="false">
+      <file leaf-file-name="activeb_master.coffee" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/activeb_master.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="42" column="38" selection-start-line="42" selection-start-column="22" selection-end-line="42" selection-end-column="38" />
+            <state vertical-scroll-proportion="0.38856015">
+              <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -71,8 +62,8 @@
       <file leaf-file-name="runner.coffee" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/remote_associates/runner.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.3333335">
-              <caret line="292" column="45" selection-start-line="292" selection-start-column="45" selection-end-line="292" selection-end-column="45" />
+            <state vertical-scroll-proportion="-7.740741">
+              <caret line="293" column="0" selection-start-line="291" selection-start-column="2" selection-end-line="293" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -140,11 +131,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.65015477">
-              <caret line="21" column="42" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
+            <state vertical-scroll-proportion="-12.5">
+              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -182,7 +173,6 @@
         <option value="$PROJECT_DIR$/design/RAT_instructions_page2.md" />
         <option value="$PROJECT_DIR$/start/runner.coffee" />
         <option value="$PROJECT_DIR$/junk.coffee" />
-        <option value="$PROJECT_DIR$/activeb_master.coffee" />
         <option value="$PROJECT_DIR$/arrow_flanker/runner.coffee" />
         <option value="$PROJECT_DIR$/trailsB/runner.coffee" />
         <option value="$PROJECT_DIR$/design/RAT_instructions_page1.md" />
@@ -190,6 +180,7 @@
         <option value="$PROJECT_DIR$/arithmetic_span/runner.coffee" />
         <option value="$PROJECT_DIR$/remote_associates/runner.coffee" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/activeb_master.coffee" />
       </list>
     </option>
   </component>
@@ -201,8 +192,8 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="118" />
-    <option name="y" value="316" />
+    <option name="x" value="76" />
+    <option name="y" value="196" />
     <option name="width" value="2099" />
     <option name="height" value="1134" />
   </component>
@@ -431,26 +422,32 @@
       <option name="project" value="LOCAL" />
       <updated>1430748796060</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Additional fixes&#10;&#10;increased font size for &quot;STOP&quot; message&#10;latin square randomization for AST&#10;&#10;&#10;">
+      <created>1431631484787</created>
+      <option name="number" value="00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1431631484787</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="118" y="316" width="2099" height="1134" extended-state="0" />
+    <frame x="76" y="196" width="2099" height="1134" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2906641" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32821497" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32821497" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -474,7 +471,8 @@
     <MESSAGE value="1. now use $.getJSON in active_master.coffee&#10;2. response data now contains &quot;Task&quot; variable&#10;&#10;Task: Arithmetic&#10;Task: Flanker&#10;Task: Remote Associates&#10;Task: TrailsB&#10;&#10;3. tried to fix scoping issue with subject and session variables by assigning to window. &#10;&#10;&#10;&#10;&#10;" />
     <MESSAGE value="Numerous fixes detailed in Arron Metcalfe's March 26 email&#10;&#10;" />
     <MESSAGE value="Bug fixes for April&#10;&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bug fixes for April&#10;&#10;" />
+    <MESSAGE value="Additional fixes&#10;&#10;increased font size for &quot;STOP&quot; message&#10;latin square randomization for AST&#10;&#10;&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Additional fixes&#10;&#10;increased font size for &quot;STOP&quot; message&#10;latin square randomization for AST&#10;&#10;&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -849,14 +847,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/activeb_master.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="42" column="38" selection-start-line="42" selection-start-column="22" selection-end-line="42" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test.coffee">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -889,16 +879,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/remote_associates/runner.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.3333335">
-          <caret line="292" column="45" selection-start-line="292" selection-start-column="45" selection-end-line="292" selection-end-column="45" />
+        <state vertical-scroll-proportion="-7.740741">
+          <caret line="293" column="0" selection-start-line="291" selection-start-column="2" selection-end-line="293" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.65015477">
-          <caret line="21" column="42" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
+        <state vertical-scroll-proportion="-12.5">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activeb_master.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38856015">
+          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
           <folding />
         </state>
       </provider>

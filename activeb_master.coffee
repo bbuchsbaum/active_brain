@@ -40,14 +40,9 @@ Active_Brain.teststart = =>
   .then(-> taskSet[3].start(1,1))
   .then(-> Done.start(1,1))
 
-Active_Brain.start = (subject, session) =>
+Active_Brain.start = =>
   ## order index
-  orderIndex = subject % 4
-  tasks = [AST, ArrowFlanker, TrailsB, RAT]
-  order = getOrder(orderIndex)[session-1]
 
-  window.taskSet = for ind in order
-    tasks[ind-1]
 
   #window.taskSet = _.shuffle([AST, ArrowFlanker, TrailsB, RAT])
   getSession()
@@ -56,6 +51,11 @@ Active_Brain.start = (subject, session) =>
     getSubject())
   .then( (subject ) ->
     window._subject = subject.data.ID
+    orderIndex = window._subject % 4
+    order = getOrder(orderIndex)[window._session-1]
+    taskSet = for ind in order
+      tasks[ind-1]
+
     Start.start(window._session, window._subject)
     .then( -> taskSet[0].start(window._session, window._subject))
     .then( -> taskSet[1].start(window._session, window._subject))

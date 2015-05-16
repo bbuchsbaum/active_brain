@@ -56,25 +56,24 @@
   })(this);
 
   Active_Brain.start = (function(_this) {
-    return function(subject, session) {
-      var ind, order, orderIndex, tasks;
-      orderIndex = subject % 4;
-      tasks = [AST, ArrowFlanker, TrailsB, RAT];
-      order = getOrder(orderIndex)[session - 1];
-      window.taskSet = (function() {
-        var _i, _len, _results;
-        _results = [];
-        for (_i = 0, _len = order.length; _i < _len; _i++) {
-          ind = order[_i];
-          _results.push(tasks[ind - 1]);
-        }
-        return _results;
-      })();
+    return function() {
       return getSession().then(function(session) {
         window._session = Number(session.data.ID);
         return getSubject();
       }).then(function(subject) {
+        var ind, order, orderIndex, taskSet;
         window._subject = subject.data.ID;
+        orderIndex = window._subject % 4;
+        order = getOrder(orderIndex)[window._session - 1];
+        taskSet = (function() {
+          var _i, _len, _results;
+          _results = [];
+          for (_i = 0, _len = order.length; _i < _len; _i++) {
+            ind = order[_i];
+            _results.push(tasks[ind - 1]);
+          }
+          return _results;
+        })();
         return Start.start(window._session, window._subject).then(function() {
           return taskSet[0].start(window._session, window._subject);
         }).then(function() {
