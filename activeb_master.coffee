@@ -43,9 +43,15 @@ Active_Brain.teststart = =>
 Active_Brain.start = =>
   ## order index
   #window.taskSet = _.shuffle([AST, ArrowFlanker, TrailsB, RAT])
+  tasks = [AST, ArrowFlanker, TrailsB, RAT]
+
   getSession()
   .then( (session) ->
     window._session = Number(session.ID)
+    if (window._session > 4)
+      console.log("session is > 4, setting to 4")
+      window._session = 4
+
     getSubject())
   .then( (subject ) ->
     window._subject =

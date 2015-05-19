@@ -57,8 +57,14 @@
 
   Active_Brain.start = (function(_this) {
     return function() {
+      var tasks;
+      tasks = [AST, ArrowFlanker, TrailsB, RAT];
       return getSession().then(function(session) {
         window._session = Number(session.ID);
+        if (window._session > 4) {
+          console.log("session is > 4, setting to 4");
+          window._session = 4;
+        }
         return getSubject();
       }).then(function(subject) {
         var ind, order, orderIndex, taskSet;
