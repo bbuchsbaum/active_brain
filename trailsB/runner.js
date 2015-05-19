@@ -52,23 +52,8 @@
         }
       },
       TrialA: function() {
-        var context, trail_move;
+        var context;
         context = this.context;
-        trail_move = function(ev) {
-          var resp, resultObj;
-          resp = {
-            RT: ev.RT,
-            timeElapsed: ev.timeElapsed,
-            index: ev.index,
-            Task: "TrailsA",
-            trialNumber: context.get("State.trialNumber"),
-            blockNumber: context.get("State.blockNumber"),
-            node: ev.node_id
-          };
-          resultObj = context.get("resultObject");
-          resultObj.push(resp);
-          return console.log(resultObj);
-        };
         return {
           Background: {
             Blank: {
@@ -91,7 +76,23 @@
               TrailsA: {
                 id: "trails_a",
                 npoints: 24,
-                react: trail_move
+                react: {
+                  trail_move: function(ev) {
+                    var resp, resultObj;
+                    resp = {
+                      RT: ev.RT,
+                      timeElapsed: ev.timeElapsed,
+                      index: ev.index,
+                      Task: "TrailsA",
+                      trialNumber: context.get("State.trialNumber"),
+                      blockNumber: context.get("State.blockNumber"),
+                      node: ev.node_id
+                    };
+                    resultObj = context.get("resultObject");
+                    resultObj.push(resp);
+                    return console.log(resultObj);
+                  }
+                }
               },
               Next: {
                 Receiver: {
@@ -115,23 +116,8 @@
         };
       },
       TrialB: function() {
-        var context, trail_move;
+        var context;
         context = this.context;
-        trail_move = function(ev) {
-          var resp, resultObj;
-          resp = {
-            RT: ev.RT,
-            timeElapsed: ev.timeElapsed,
-            index: ev.index,
-            Task: "TrailsB",
-            trialNumber: context.get("State.trialNumber"),
-            blockNumber: context.get("State.blockNumber"),
-            node: ev.node_id
-          };
-          resultObj = context.get("resultObject");
-          resultObj.push(resp);
-          return console.log(resultObj);
-        };
         return {
           Background: {
             Blank: {
@@ -154,7 +140,23 @@
               TrailsB: {
                 id: "trails_b",
                 npoints: 24,
-                react: trail_move
+                react: {
+                  trail_move: function(ev) {
+                    var resp, resultObj;
+                    resp = {
+                      RT: ev.RT,
+                      timeElapsed: ev.timeElapsed,
+                      index: ev.index,
+                      Task: "TrailsA",
+                      trialNumber: context.get("State.trialNumber"),
+                      blockNumber: context.get("State.blockNumber"),
+                      node: ev.node_id
+                    };
+                    resultObj = context.get("resultObject");
+                    resultObj.push(resp);
+                    return console.log(resultObj);
+                  }
+                }
               },
               Next: {
                 Receiver: {
@@ -182,7 +184,7 @@
           1: {
             Action: {
               execute: function(context) {
-                console.log("setting trial type to B!!!");
+                console.log("setting trail type to B!!!");
                 context.set("trail_type", "B");
                 return console.log(context.get("trail_type"));
               }
@@ -209,16 +211,14 @@
         Action: {
           execute: function(context) {
             var logdat;
-            if (context.get("active_brain")) {
-              logdat = context.get("resultObject");
-              console.log("saving", logdat);
-              return $.ajax({
-                type: "POST",
-                url: "/results",
-                data: JSON.stringify(logdat),
-                contentType: "application/json"
-              });
-            }
+            logdat = context.get("resultObject");
+            console.log("saving", logdat);
+            return $.ajax({
+              type: "POST",
+              url: "/results",
+              data: JSON.stringify(logdat),
+              contentType: "application/json"
+            });
           }
         }
       }
@@ -242,8 +242,8 @@
             trial: routines.TrialB
           }
         },
-        5: routines.Coda,
-        6: routines.Save
+        5: routines.Save,
+        6: routines.Coda
       };
     }
   };

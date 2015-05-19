@@ -100,19 +100,6 @@ instructionsB = """
     TrialA: ->
       context = @context
 
-      trail_move = (ev) ->
-        resp =
-          RT: ev.RT
-          timeElapsed: ev.timeElapsed
-          index: ev.index
-          Task: "TrailsA"
-          trialNumber: context.get("State.trialNumber")
-          blockNumber: context.get("State.blockNumber")
-          node: ev.node_id
-        resultObj = context.get("resultObject")
-        resultObj.push(resp)
-        console.log(resultObj)
-
       Background:
         Blank:
           fill: "gray"
@@ -129,7 +116,19 @@ instructionsB = """
           TrailsA:
             id: "trails_a"
             npoints: 24
-            react: trail_move
+            react:
+              trail_move: (ev) ->
+                resp =
+                  RT: ev.RT
+                  timeElapsed: ev.timeElapsed
+                  index: ev.index
+                  Task: "TrailsA"
+                  trialNumber: context.get("State.trialNumber")
+                  blockNumber: context.get("State.blockNumber")
+                  node: ev.node_id
+                resultObj = context.get("resultObject")
+                resultObj.push(resp)
+                console.log(resultObj)
           Next:
             Receiver:
               signal: "trail_completed"
@@ -143,19 +142,6 @@ instructionsB = """
 
     TrialB: ->
       context = @context
-
-      trail_move = (ev) ->
-        resp =
-          RT: ev.RT
-          timeElapsed: ev.timeElapsed
-          index: ev.index
-          Task: "TrailsB"
-          trialNumber: context.get("State.trialNumber")
-          blockNumber: context.get("State.blockNumber")
-          node: ev.node_id
-        resultObj = context.get("resultObject")
-        resultObj.push(resp)
-        console.log(resultObj)
 
       Background:
         Blank:
@@ -173,7 +159,19 @@ instructionsB = """
           TrailsB:
             id: "trails_b"
             npoints: 24
-            react: trail_move
+            react:
+              trail_move: (ev) ->
+                resp =
+                  RT: ev.RT
+                  timeElapsed: ev.timeElapsed
+                  index: ev.index
+                  Task: "TrailsA"
+                  trialNumber: context.get("State.trialNumber")
+                  blockNumber: context.get("State.blockNumber")
+                  node: ev.node_id
+                resultObj = context.get("resultObject")
+                resultObj.push(resp)
+                console.log(resultObj)
           Next:
             Receiver:
               signal: "trail_completed"
@@ -190,7 +188,7 @@ instructionsB = """
         1:
           Action:
             execute: (context) ->
-              console.log("setting trial type to B!!!")
+              console.log("setting trail type to B!!!")
               context.set("trail_type", "B")
               console.log(context.get("trail_type"))
 
@@ -209,15 +207,14 @@ instructionsB = """
     Save:
       Action:
         execute: (context) ->
-          if context.get("active_brain")
-            logdat = context.get("resultObject")
-            console.log("saving", logdat)
-            $.ajax({
-              type: "POST"
-              url: "/results"
-              data: JSON.stringify(logdat)
-              contentType: "application/json"
-            })
+          logdat = context.get("resultObject")
+          console.log("saving", logdat)
+          $.ajax({
+            type: "POST"
+            url: "/results"
+            data: JSON.stringify(logdat)
+            contentType: "application/json"
+          })
 
   Flow: (routines) ->
     1: routines.Prelude_A
@@ -231,8 +228,8 @@ instructionsB = """
       trialList: trials
       start: routines.Block.Start
       trial: routines.TrialB
-    5: routines.Coda
-    6: routines.Save
+    5: routines.Save
+    6: routines.Coda
 
 
 

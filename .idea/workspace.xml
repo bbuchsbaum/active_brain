@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="25b224a4-6346-4ffc-9249-b3b4469dbe94" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/activeb_master.coffee" afterPath="$PROJECT_DIR$/activeb_master.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/activeb_master.js" afterPath="$PROJECT_DIR$/activeb_master.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/trailsB/runner.coffee" afterPath="$PROJECT_DIR$/trailsB/runner.coffee" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/trailsB/runner.js" afterPath="$PROJECT_DIR$/trailsB/runner.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="active_brain.iws" />
@@ -48,11 +48,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="activeb_master.coffee" pinned="false" current-in-tab="true">
+      <file leaf-file-name="activeb_master.coffee" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/activeb_master.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.56508875">
-              <caret line="62" column="23" selection-start-line="62" selection-start-column="23" selection-end-line="62" selection-end-column="23" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="48" column="21" selection-start-line="48" selection-start-column="21" selection-end-line="48" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -91,42 +91,40 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RAT_instructions_page1.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/design/RAT_instructions_page1.md">
+      <file leaf-file-name="runner.coffee" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/trailsB/runner.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.137931">
-              <caret line="6" column="52" selection-start-line="6" selection-start-column="52" selection-end-line="6" selection-end-column="52" />
-              <folding />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="128" column="44" selection-start-line="128" selection-start-column="44" selection-end-line="128" selection-end-column="44" />
+              <folding>
+                <marker date="1432065771000" expanded="true" signature="158:1047" placeholder="..." />
+                <marker date="1432065771000" expanded="false" signature="188:197" placeholder="..." />
+                <marker date="1432065771000" expanded="true" signature="1111:1974" placeholder="..." />
+              </folding>
             </state>
-          </provider>
-          <provider editor-type-id="MarkdownPreviewEditor">
-            <state />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RAT_instructions_page2.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/design/RAT_instructions_page2.md">
+      <file leaf-file-name="runner.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/trailsB/runner.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.034483">
-              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-              <folding />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1432065772000" expanded="true" signature="3843:3861" placeholder="{...}" />
+                <marker date="1432065772000" expanded="true" signature="5619:5637" placeholder="{...}" />
+              </folding>
             </state>
-          </provider>
-          <provider editor-type-id="MarkdownPreviewEditor">
-            <state />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RAT_instructions_page3.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/design/RAT_instructions_page3.md">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/trailsB/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.6896552">
-              <caret line="1" column="22" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
+            <state vertical-scroll-proportion="0.3846154">
+              <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
               <folding />
             </state>
-          </provider>
-          <provider editor-type-id="MarkdownPreviewEditor">
-            <state />
           </provider>
         </entry>
       </file>
@@ -173,13 +171,13 @@
         <option value="$PROJECT_DIR$/start/runner.coffee" />
         <option value="$PROJECT_DIR$/junk.coffee" />
         <option value="$PROJECT_DIR$/arrow_flanker/runner.coffee" />
-        <option value="$PROJECT_DIR$/trailsB/runner.coffee" />
         <option value="$PROJECT_DIR$/design/RAT_instructions_page1.md" />
         <option value="$PROJECT_DIR$/test.coffee" />
         <option value="$PROJECT_DIR$/arithmetic_span/runner.coffee" />
         <option value="$PROJECT_DIR$/remote_associates/runner.coffee" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/activeb_master.coffee" />
+        <option value="$PROJECT_DIR$/trailsB/runner.coffee" />
       </list>
     </option>
   </component>
@@ -191,8 +189,8 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="201" />
-    <option name="y" value="142" />
+    <option name="x" value="62" />
+    <option name="y" value="58" />
     <option name="width" value="2099" />
     <option name="height" value="1134" />
   </component>
@@ -234,6 +232,38 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="active_brain" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="active_brain" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="active_brain" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trailsB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="runner.coffee" />
+              <option name="myItemType" value="com.intellij.plugins.watcher.projectView.NestingTreeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="active_brain" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="active_brain" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trailsB" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -451,11 +481,17 @@
       <option name="project" value="LOCAL" />
       <updated>1432060065983</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Additional fixes&#10;&#10;increased font size for &quot;STOP&quot; message&#10;latin square randomization for AST&#10;&#10;&#10;">
+      <created>1432063357874</created>
+      <option name="number" value="00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1432063357874</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="201" y="142" width="2099" height="1134" extended-state="0" />
+    <frame x="62" y="58" width="2099" height="1134" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2906641" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -601,13 +637,6 @@
             <marker date="1431629764000" expanded="true" signature="167:991" placeholder="..." />
             <marker date="1431629764000" expanded="false" signature="197:206" placeholder="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trailsB/runner.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -809,26 +838,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/trailsB/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.8461537">
-          <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trailsB/runner.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.481482">
-          <caret line="197" column="13" selection-start-line="197" selection-start-column="13" selection-end-line="197" selection-end-column="13" />
-          <folding>
-            <marker date="1431629818000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1431629818000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1431629818000" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/design/RAT_instructions_page1.md">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.137931">
@@ -918,8 +927,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/activeb_master.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.56508875">
-          <caret line="62" column="23" selection-start-line="62" selection-start-column="23" selection-end-line="62" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="48" column="21" selection-start-line="48" selection-start-column="21" selection-end-line="48" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trailsB/runner.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1432065772000" expanded="true" signature="3843:3861" placeholder="{...}" />
+            <marker date="1432065772000" expanded="true" signature="5619:5637" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trailsB/runner.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="128" column="44" selection-start-line="128" selection-start-column="44" selection-end-line="128" selection-end-column="44" />
+          <folding>
+            <marker date="1432065771000" expanded="true" signature="158:1047" placeholder="..." />
+            <marker date="1432065771000" expanded="false" signature="188:197" placeholder="..." />
+            <marker date="1432065771000" expanded="true" signature="1111:1974" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trailsB/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3846154">
+          <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
           <folding />
         </state>
       </provider>
