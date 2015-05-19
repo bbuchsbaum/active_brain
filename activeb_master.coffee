@@ -42,15 +42,20 @@ Active_Brain.teststart = =>
 
 Active_Brain.start = =>
   ## order index
-
-
   #window.taskSet = _.shuffle([AST, ArrowFlanker, TrailsB, RAT])
   getSession()
   .then( (session) ->
-    window._session = Number(session.data.ID)
+    window._session = Number(session.ID)
     getSubject())
   .then( (subject ) ->
-    window._subject = subject.data.ID
+    window._subject =
+      if subject.ID is "activebrain"
+        1001
+      else
+        Number(subject.ID)
+
+    console.log("subject id",window._subject )
+    console.log("session id",window._session )
     orderIndex = window._subject % 4
     order = getOrder(orderIndex)[window._session-1]
     taskSet = for ind in order

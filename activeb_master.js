@@ -58,11 +58,13 @@
   Active_Brain.start = (function(_this) {
     return function() {
       return getSession().then(function(session) {
-        window._session = Number(session.data.ID);
+        window._session = Number(session.ID);
         return getSubject();
       }).then(function(subject) {
         var ind, order, orderIndex, taskSet;
-        window._subject = subject.data.ID;
+        window._subject = subject.ID === "activebrain" ? 1001 : Number(subject.ID);
+        console.log("subject id", window._subject);
+        console.log("session id", window._session);
         orderIndex = window._subject % 4;
         order = getOrder(orderIndex)[window._session - 1];
         taskSet = (function() {
