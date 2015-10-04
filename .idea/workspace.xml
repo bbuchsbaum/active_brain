@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="25b224a4-6346-4ffc-9249-b3b4469dbe94" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="active_brain.iws" />
@@ -547,7 +546,13 @@
       <option name="project" value="LOCAL" />
       <updated>1443920476048</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="changed 'test' to 'false'">
+      <created>1443920966368</created>
+      <option name="number" value="00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1443920966368</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -593,7 +598,8 @@
     <MESSAGE value="Additional fixes&#10;&#10;increased font size for &quot;STOP&quot; message&#10;latin square randomization for AST&#10;&#10;&#10;" />
     <MESSAGE value="#3. swapped in new math stimulus list &#10;#4. now log errors in Trails A and B&#10;#5. Fixed end screen&#10;#7. reduced size of screen to 800 by 800px&#10;&#10;&#10;" />
     <MESSAGE value="g" />
-    <option name="LAST_COMMIT_MESSAGE" value="g" />
+    <MESSAGE value="changed 'test' to 'false'" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed 'test' to 'false'" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
