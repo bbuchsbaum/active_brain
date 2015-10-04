@@ -155,7 +155,7 @@
             console.log(this.response);
             if (this.context.get("task") === "practice") {
               message = this.response[1].event === "timeout" ? "Too Slow" : this.response[1].event.val === this.response[1].trial.Answer ? "Correct!" : "Incorrect!";
-              if (this.response[1].RT > 4000) {
+              if (this.response[1].RT > 20000) {
                 message += " -- Try to go faster!";
               }
               return {
@@ -181,7 +181,6 @@
               Action: {
                 execute: function(context) {
                   var dat, logdat, obj;
-                  console.log("executing coda");
                   dat = context.userData({
                     taskName: "main",
                     type: "response",

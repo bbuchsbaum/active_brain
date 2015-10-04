@@ -40,29 +40,29 @@ _ = Psy._
 
             * make your decision as fast as you can.
 
-          Press any key to continue
+          Press spacebar to continue
           -------------------------
 
           """
           Next:
-            AnyKey: {}
+            SpaceKey: {}
 
     Block:
       Start: ->
         Text:
           position: "center"
           origin: "center"
-          content: ["Get Ready for Block #{@context.get("State.blockNumber")}!", "Press any key to start"]
+          content: ["Get Ready for Block #{@context.get("State.blockNumber")}!", "Press the spacebar to start"]
 
-        Next: AnyKey: {}
+        Next: SpaceKey: {}
 
       End: ->
         Text:
           position: "center"
           origin: "center"
-          content: ["End of Block #{@context.get("State.blockNumber")}", "Press any key to continue"]
+          content: ["End of Block #{@context.get("State.blockNumber")}", "Press the spacebar to continue"]
 
-        Next: AnyKey: {}
+        Next: SpaceKey: {}
 
     Trial: ->
       arrowLen = 150
@@ -145,11 +145,11 @@ _ = Psy._
           Text:
             position: "center"
             origin: "center"
-            content: ["End of Flanker Task", "Press Any Key to Continue"]
+            content: ["End of Flanker Task", "Press the Space Bar to Continue"]
             fontSize: 28
 
           Next:
-            AnyKey: {}
+            SpaceKey: {}
 
     Save: ->
       Action:

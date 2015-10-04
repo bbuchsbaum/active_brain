@@ -126,9 +126,22 @@ instructionsB = """
                   trialNumber: context.get("State.trialNumber")
                   blockNumber: context.get("State.blockNumber")
                   node: ev.node_id
+                  errors: ev.errors
                 resultObj = context.get("resultObject")
                 resultObj.push(resp)
                 console.log(resultObj)
+              trail_completed: (ev) ->
+                resp =
+                  RT: 0
+                  timeElapsed: ev.timeElapsed
+                  index: ev.index
+                  Task: "TrailsA"
+                  trialNumber: context.get("State.trialNumber")
+                  blockNumber: context.get("State.blockNumber")
+                  node: ev.node_id
+                  errors: ev.errors
+                resultObj = context.get("resultObject")
+                resultObj.push(resp)
           Next:
             Receiver:
               signal: "trail_completed"
@@ -169,9 +182,24 @@ instructionsB = """
                   trialNumber: context.get("State.trialNumber")
                   blockNumber: context.get("State.blockNumber")
                   node: ev.node_id
+                  errors: ev.errors
                 resultObj = context.get("resultObject")
                 resultObj.push(resp)
                 console.log(resultObj)
+              trail_completed: (ev) ->
+                resp =
+                  RT: 0
+                  timeElapsed: ev.timeElapsed
+                  index: ev.index
+                  Task: "TrailsA"
+                  trialNumber: context.get("State.trialNumber")
+                  blockNumber: context.get("State.blockNumber")
+                  node: ev.node_id
+                  errors: ev.errors
+                resultObj = context.get("resultObject")
+                resultObj.push(resp)
+
+
           Next:
             Receiver:
               signal: "trail_completed"

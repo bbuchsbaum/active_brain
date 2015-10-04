@@ -1,0 +1,27 @@
+#container {
+    width: 800px;
+    height: 800px;
+    background-color: white;
+    position: relative;
+    margin: 0 auto;
+    padding: 0;
+    /*border: 0;*/
+    /*border-style: solid;
+    border-width: 2px;
+    border-color: green;*/
+
+}
+
+#htmlcontainer {
+    width: 800px;
+    height: 800px;
+    position: absolute;
+    /*margin: 0 auto;*/
+    margin: 0px;
+    z-index: 999;
+    /*background-color: lightgray;
+    border-style: solid;
+    border-width: 2px;
+    border-color: red;*/
+    padding: 0px;
+}

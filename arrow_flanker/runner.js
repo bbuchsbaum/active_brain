@@ -11,9 +11,9 @@
       Prelude: {
         Events: {
           1: {
-            Markdown: "\n<p>\n<p>\n\n# **<span style=\"color:red\">STOP!</span>**\n\n## **READ** the following Instructions **CAREFULLY**\n\nFlanker Task\n==========================\n\nOn every trial a central arrow will appear surrounded by arrows on either side.\nYour goal is to focus on the central arrow and decide whether it points left or right.\n\n  * If the central arrow points <-- left, press the **left arrow** key.\n\n  * If the central arrow points --> right, press the **right arrow** key.\n\n  * If your response is correct, the screen will briefly turn green.\n\n  * If your response is incorrect, the screen will briefly turn red.\n\n  * make your decision as fast as you can.\n\nPress any key to continue\n-------------------------\n",
+            Markdown: "\n<p>\n<p>\n\n# **<span style=\"color:red\">STOP!</span>**\n\n## **READ** the following Instructions **CAREFULLY**\n\nFlanker Task\n==========================\n\nOn every trial a central arrow will appear surrounded by arrows on either side.\nYour goal is to focus on the central arrow and decide whether it points left or right.\n\n  * If the central arrow points <-- left, press the **left arrow** key.\n\n  * If the central arrow points --> right, press the **right arrow** key.\n\n  * If your response is correct, the screen will briefly turn green.\n\n  * If your response is incorrect, the screen will briefly turn red.\n\n  * make your decision as fast as you can.\n\nPress spacebar to continue\n-------------------------\n",
             Next: {
-              AnyKey: {}
+              SpaceKey: {}
             }
           }
         }
@@ -24,10 +24,10 @@
             Text: {
               position: "center",
               origin: "center",
-              content: ["Get Ready for Block " + (this.context.get("State.blockNumber")) + "!", "Press any key to start"]
+              content: ["Get Ready for Block " + (this.context.get("State.blockNumber")) + "!", "Press the spacebar to start"]
             },
             Next: {
-              AnyKey: {}
+              SpaceKey: {}
             }
           };
         },
@@ -36,10 +36,10 @@
             Text: {
               position: "center",
               origin: "center",
-              content: ["End of Block " + (this.context.get("State.blockNumber")), "Press any key to continue"]
+              content: ["End of Block " + (this.context.get("State.blockNumber")), "Press the spacebar to continue"]
             },
             Next: {
-              AnyKey: {}
+              SpaceKey: {}
             }
           };
         }
@@ -158,11 +158,11 @@
             Text: {
               position: "center",
               origin: "center",
-              content: ["End of Flanker Task", "Press Any Key to Continue"],
+              content: ["End of Flanker Task", "Press the Space Bar to Continue"],
               fontSize: 28
             },
             Next: {
-              AnyKey: {}
+              SpaceKey: {}
             }
           }
         }

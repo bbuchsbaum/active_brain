@@ -8101,7 +8101,7 @@ require.define('67', function(module, exports, __dirname, __filename, undefined)
         }
         Presenter.prototype.start = function () {
             var args, block, record, trialNum, trialSpec, trials;
-            this.blockList = new BlockSeq(function () {
+            this.blockList = new Flow.BlockSeq(function () {
                 var _i, _len, _ref, _results;
                 _ref = this.trialList.blocks;
                 _results = [];
@@ -9305,12 +9305,12 @@ require.define('69', function(module, exports, __dirname, __filename, undefined)
     }
     exports.getTimestamp = getTimestamp;
     exports.timestamp = getTimestamp;
-    this.browserBackDisabled = false;
+    window.browserBackDisabled = false;
     exports.disableBrowserBack = function () {
         var rx;
         if (!this.browserBackDisabled) {
             rx = /INPUT|SELECT|TEXTAREA/i;
-            this.browserBackDisabled = true;
+            window.browserBackDisabled = true;
             return $(document).bind('keydown keypress', function (e) {
                 if (e.which === 8) {
                     if (!rx.test(e.target.tagName) || e.target.disabled || e.target.readOnly) {
@@ -10228,7 +10228,6 @@ require.define('84', function(module, exports, __dirname, __filename, undefined)
                 return function (key, e) {
                     var Acc, resp, timeStamp;
                     console.log('handling key', key);
-                    console.log('handling event', e);
                     timeStamp = utils.getTimestamp();
                     Acc = _.contains(_this.spec.correct, key);
                     console.log('ACC', Acc);
@@ -11123,6 +11122,8 @@ require.define('75', function(module, exports, __dirname, __filename, undefined)
     Canvas.Blank = require('100', module).Blank;
     Canvas.Circle = require('101', module).Circle;
     Canvas.Clear = require('102', module).Clear;
+    Canvas.ColorGrid = require('141', module).ColorGrid;
+    Canvas.ColorWheel = require('142', module).ColorWheel;
     Canvas.FixationCross = require('103', module).FixationCross;
     Canvas.CanvasBorder = require('104', module).CanvasBorder;
     Canvas.GridLines = require('105', module).GridLines;
@@ -13615,8 +13616,8 @@ require.define('114', function(module, exports, __dirname, __filename, undefined
             pts = utils.genPoints(this.npoints, {
                 x: this.circleRadius,
                 y: this.circleRadius,
-                width: context.width() - this.circleRadius * 2,
-                height: context.height() - this.circleRadius * 2
+                width: context.width() - this.circleRadius * 8,
+                height: context.height() - this.circleRadius * 8
             });
             nn = utils.nearestNeighbors(pts, 1)[0];
             niter = 0;
@@ -13633,17 +13634,19 @@ require.define('114', function(module, exports, __dirname, __filename, undefined
             }
             return pts;
         };
-        TrailsA.prototype.emitComplete = function (outer, pathIndex, id) {
+        TrailsA.prototype.emitComplete = function (outer, pathIndex, id, errors) {
             console.log('emitting trail_completed signal');
+            console.log('number of errors: ', errors);
             return outer.emit('trail_completed', {
                 name: outer.name,
                 id: outer.id,
                 index: pathIndex,
                 node_id: id,
-                timeElapsed: outer.timeElapsed
+                timeElapsed: outer.timeElapsed,
+                errors: errors
             });
         };
-        TrailsA.prototype.emitMove = function (outer, pathIndex, id) {
+        TrailsA.prototype.emitMove = function (outer, pathIndex, id, errors) {
             var RT, curtime;
             if (pathIndex === 0) {
                 outer.startTime = utils.timestamp();
@@ -13660,6 +13663,7 @@ require.define('114', function(module, exports, __dirname, __filename, undefined
                 index: pathIndex,
                 node_id: id,
                 timeElapsed: outer.timeElapsed,
+                errors: errors,
                 RT: RT
             });
         };
@@ -13673,7 +13677,7 @@ require.define('114', function(module, exports, __dirname, __filename, undefined
                         this.fill('red');
                         attrs = this.attrs;
                         setTimeout(function () {
-                            return outer.emitComplete(outer, outer.pathIndex, attrs.id);
+                            return outer.emitComplete(outer, outer.pathIndex, attrs.id, outer.errors);
                         }, 200);
                     } else {
                         this.fill(outer.spec.circleSelectedFill);
@@ -13691,9 +13695,11 @@ require.define('114', function(module, exports, __dirname, __filename, undefined
                             this.getPosition().y
                         ]));
                     }
-                    outer.emitMove(outer, outer.pathIndex, this.attrs.id);
+                    outer.emitMove(outer, outer.pathIndex, this.attrs.id, outer.errors);
                     outer.pathIndex++;
                     return context.draw();
+                } else {
+                    return outer.errors++;
                 }
             });
         };
@@ -13711,6 +13717,7 @@ require.define('114', function(module, exports, __dirname, __filename, undefined
             ]);
             this.path.visible(false);
             this.pathIndex = 0;
+            this.errors = 0;
             this.group = new Kinetic.Group();
             this.group.add(this.path);
             _ref = this.points;
@@ -13754,7 +13761,6 @@ require.define('114', function(module, exports, __dirname, __filename, undefined
             }
             outer = this;
             onPresent = function (context) {
-                return console.log('onPresent called!');
             };
             return this.presentable(this, this.group);
         };
@@ -19901,7 +19907,7 @@ require.define('129', function(module, exports, __dirname, __filename, undefined
 });
 require.define('132', function(module, exports, __dirname, __filename, undefined){
 (function () {
-    var TextField, html, __hasProp = {}.hasOwnProperty, __extends = function (child, parent) {
+    var TextField, html, utils, __hasProp = {}.hasOwnProperty, __extends = function (child, parent) {
             for (var key in parent) {
                 if (__hasProp.call(parent, key))
                     child[key] = parent[key];
@@ -19915,6 +19921,7 @@ require.define('132', function(module, exports, __dirname, __filename, undefined
             return child;
         };
     html = require('76', module);
+    utils = require('69', module);
     TextField = function (_super) {
         __extends(TextField, _super);
         function TextField() {
@@ -19929,6 +19936,7 @@ require.define('132', function(module, exports, __dirname, __filename, undefined
         TextField.prototype.signals = ['change'];
         TextField.prototype.initialize = function (context) {
             var outer, placeholder;
+            utils.disableBrowserBack();
             outer = this;
             this.el = this.div();
             this.el.addClass('ui input');
@@ -19941,7 +19949,6 @@ require.define('132', function(module, exports, __dirname, __filename, undefined
             outer = this;
             return this.input.on('change', function () {
                 var content;
-                content = void 0;
                 content = $(this).val();
                 return outer.emit('change', {
                     id: outer.id,
@@ -20152,7 +20159,7 @@ require.define('135', function(module, exports, __dirname, __filename, undefined
             inline: false,
             x: 10,
             y: 10,
-            focus: true
+            focus: false
         };
         Question.prototype.inputElement = function () {
             switch (this.spec.type) {
@@ -20211,7 +20218,6 @@ require.define('135', function(module, exports, __dirname, __filename, undefined
             }(this);
             hclass = headerClass();
             stub = ('<h4 class="' + hclass + '"></h4>').replace(/h4/g, this.spec.headerTag);
-            console.log('stub is', stub);
             this.title = $(stub).text(this.spec.question);
             this.segment = $('<div class="ui segment attached">');
             content = this.question.el;
@@ -24436,6 +24442,324 @@ require.define('140', function(module, exports, __dirname, __filename, undefined
         return Action;
     }(require('72', module).Response);
     exports.Action = Action;
+}.call(this));
+});
+require.define('141', function(module, exports, __dirname, __filename, undefined){
+(function () {
+    var ColorGrid, KStimulus, __hasProp = {}.hasOwnProperty, __extends = function (child, parent) {
+            for (var key in parent) {
+                if (__hasProp.call(parent, key))
+                    child[key] = parent[key];
+            }
+            function ctor() {
+                this.constructor = child;
+            }
+            ctor.prototype = parent.prototype;
+            child.prototype = new ctor();
+            child.__super__ = parent.prototype;
+            return child;
+        };
+    KStimulus = require('72', module).KineticStimulus;
+    ColorGrid = function (_super) {
+        __extends(ColorGrid, _super);
+        ColorGrid.prototype.defaults = {
+            x: 0,
+            y: 0,
+            width: null,
+            height: null,
+            rows: 4,
+            cols: 4,
+            colorFill: [],
+            colorLoc: [],
+            stroke: 'gray',
+            strokeWidth: 1,
+            dashArray: null,
+            fillSquares: true
+        };
+        function ColorGrid(spec) {
+            if (spec == null) {
+                spec = {};
+            }
+            ColorGrid.__super__.constructor.call(this, spec);
+        }
+        ColorGrid.prototype.render = function (context) {
+            var cellHeight, cellWidth, clr, group, height, i, index, line, pos, rect, width, x, y, _i, _j, _ref, _ref1;
+            if (this.spec.height == null) {
+                height = context.height();
+            } else {
+                height = this.spec.height;
+            }
+            if (this.spec.width == null) {
+                width = context.width();
+            } else {
+                width = this.spec.width;
+            }
+            cellWidth = Math.floor(width / this.spec.rows);
+            cellHeight = Math.floor(height / this.spec.cols);
+            width = cellWidth * this.spec.rows;
+            height = cellWidth * this.spec.cols;
+            group = new Kinetic.Group();
+            for (i = _i = 0, _ref = this.spec.rows; 0 <= _ref ? _i <= _ref : _i >= _ref; i = 0 <= _ref ? ++_i : --_i) {
+                y = this.spec.y + i * height / this.spec.rows;
+                line = new Kinetic.Line({
+                    points: [
+                        this.spec.x,
+                        y,
+                        this.spec.x + width,
+                        y
+                    ],
+                    stroke: this.spec.stroke,
+                    strokeWidth: this.spec.strokeWidth,
+                    dashArray: this.spec.dashArray
+                });
+                group.add(line);
+            }
+            for (i = _j = 0, _ref1 = this.spec.cols; 0 <= _ref1 ? _j <= _ref1 : _j >= _ref1; i = 0 <= _ref1 ? ++_j : --_j) {
+                x = this.spec.x + i * width / this.spec.cols;
+                line = new Kinetic.Line({
+                    points: [
+                        x,
+                        this.spec.y,
+                        x,
+                        this.spec.y + height
+                    ],
+                    stroke: this.spec.stroke,
+                    strokeWidth: this.spec.strokeWidth,
+                    dashArray: this.spec.dashArray
+                });
+                group.add(line);
+            }
+            this.rectangles = function () {
+                var _k, _len, _ref2, _results;
+                _ref2 = this.spec.colorFill;
+                _results = [];
+                for (index = _k = 0, _len = _ref2.length; _k < _len; index = ++_k) {
+                    clr = _ref2[index];
+                    pos = this.spec.colorLoc[index];
+                    rect = new Kinetic.Rect({
+                        x: this.spec.x + pos[0] * cellWidth,
+                        y: this.spec.y + pos[1] * cellHeight,
+                        width: cellWidth - this.spec.strokeWidth,
+                        height: cellHeight - this.spec.strokeWidth,
+                        fill: this.spec.fillSquares != null ? clr : null
+                    });
+                    group.add(rect);
+                    _results.push(rect);
+                }
+                return _results;
+            }.call(this);
+            return this.presentable(this, group);
+        };
+        return ColorGrid;
+    }(KStimulus);
+    exports.ColorGrid = ColorGrid;
+}.call(this));
+});
+require.define('142', function(module, exports, __dirname, __filename, undefined){
+(function () {
+    var ColorWheel, HSVtoRGB, KStimulus, __hasProp = {}.hasOwnProperty, __extends = function (child, parent) {
+            for (var key in parent) {
+                if (__hasProp.call(parent, key))
+                    child[key] = parent[key];
+            }
+            function ctor() {
+                this.constructor = child;
+            }
+            ctor.prototype = parent.prototype;
+            child.prototype = new ctor();
+            child.__super__ = parent.prototype;
+            return child;
+        };
+    KStimulus = require('72', module).KineticStimulus;
+    HSVtoRGB = function (h, s, v) {
+        var b, f, g, i, p, q, r, t;
+        r = void 0;
+        g = void 0;
+        b = void 0;
+        i = void 0;
+        f = void 0;
+        p = void 0;
+        q = void 0;
+        t = void 0;
+        if (h && s === void 0 && v === void 0) {
+            s = h.s;
+            v = h.v;
+            h = h.h;
+        }
+        i = Math.floor(h * 6);
+        f = h * 6 - i;
+        p = v * (1 - s);
+        q = v * (1 - f * s);
+        t = v * (1 - (1 - f) * s);
+        switch (i % 6) {
+        case 0:
+            r = v;
+            g = t;
+            b = p;
+            break;
+        case 1:
+            r = q;
+            g = v;
+            b = p;
+            break;
+        case 2:
+            r = p;
+            g = v;
+            b = t;
+            break;
+        case 3:
+            r = p;
+            g = q;
+            b = v;
+            break;
+        case 4:
+            r = t;
+            g = p;
+            b = v;
+            break;
+        case 5:
+            r = v;
+            g = p;
+            b = q;
+        }
+        return {
+            r: Math.floor(r * 255),
+            g: Math.floor(g * 255),
+            b: Math.floor(b * 255)
+        };
+    };
+    ColorWheel = function (_super) {
+        __extends(ColorWheel, _super);
+        ColorWheel.prototype.defaults = {
+            x: 100,
+            y: 100,
+            radius: 100
+        };
+        function ColorWheel(spec) {
+            if (spec == null) {
+                spec = {};
+            }
+            ColorWheel.__super__.constructor.call(this, spec);
+        }
+        ColorWheel.prototype.initialize = function () {
+        };
+        ColorWheel.prototype.render = function (context) {
+            var cover, endPos, group, i, nsegments, rgb, sep, wedge, wedges;
+            nsegments = 40;
+            endPos = 0;
+            group = new Kinetic.Group();
+            wedges = function () {
+                var _i, _results;
+                _results = [];
+                for (i = _i = 0; 0 <= nsegments ? _i < nsegments : _i > nsegments; i = 0 <= nsegments ? ++_i : --_i) {
+                    rgb = HSVtoRGB(i / nsegments, 1, 1);
+                    wedge = new Kinetic.Wedge({
+                        radius: this.spec.radius,
+                        x: this.spec.x,
+                        y: this.spec.y,
+                        fill: [
+                            'rgb(',
+                            rgb.r,
+                            ',',
+                            rgb.g,
+                            ',',
+                            rgb.b,
+                            ')'
+                        ].join(sep = ''),
+                        stroke: [
+                            'rgb(',
+                            rgb.r,
+                            ',',
+                            rgb.g,
+                            ',',
+                            rgb.b,
+                            ')'
+                        ].join(sep = ''),
+                        strokeWidth: 1,
+                        angleDeg: 360 / nsegments,
+                        rotationDeg: endPos
+                    });
+                    group.add(wedge);
+                    endPos += 360 / nsegments;
+                    _results.push(wedge);
+                }
+                return _results;
+            }.call(this);
+            cover = new Kinetic.Circle({
+                radius: this.spec.radius / 2,
+                x: this.spec.x,
+                y: this.spec.y,
+                fill: 'gray'
+            });
+            group.add(cover);
+            return this.presentable(this, group);
+        };
+        ColorWheel.prototype.render2 = function (context) {
+            var angle, ctx, gradient1, gradient2, group, r, rgb, sep, x, x0, y0, _i, _j;
+            ctx = context.contentLayer.getContext();
+            gradient1 = ctx.createLinearGradient(0, 0, 200, 10);
+            gradient2 = ctx.createLinearGradient(0, 0, 200, 10);
+            x0 = this.spec.x;
+            y0 = this.spec.y;
+            r = this.spec.radius;
+            for (angle = _i = 180; _i >= 0; angle = --_i) {
+                rgb = HSVtoRGB(angle / 360, 1, 1);
+                x = x0 + r * Math.cos(angle * Math.PI / 180);
+                console.log(rgb);
+                console.log('x1:', x);
+                gradient1.addColorStop(x / 200, [
+                    'rgb(',
+                    rgb.r,
+                    ',',
+                    rgb.g,
+                    ',',
+                    rgb.b,
+                    ')'
+                ].join(sep = ''));
+            }
+            for (angle = _j = 180; _j <= 360; angle = ++_j) {
+                rgb = HSVtoRGB(angle / 360, 1, 1);
+                console.log(rgb);
+                x = x0 + r * Math.cos(angle * Math.PI / 180);
+                console.log('x2:', x);
+                gradient2.addColorStop(x / 200, [
+                    'rgb(',
+                    rgb.r,
+                    ',',
+                    rgb.g,
+                    ',',
+                    rgb.b,
+                    ')'
+                ].join(sep = ''));
+            }
+            this.wheel1 = new Kinetic.Shape({
+                drawFunc: function (cx) {
+                    cx.beginPath();
+                    cx.arc(x0, y0, r, Math.PI, 0, false);
+                    cx.stroke();
+                    return cx.fillStrokeShape(this);
+                },
+                stroke: gradient1,
+                strokeWidth: 50
+            });
+            this.wheel2 = new Kinetic.Shape({
+                drawFunc: function (cx) {
+                    cx.beginPath();
+                    cx.arc(x0, y0 + 10, r, 0, Math.PI, false);
+                    cx.stroke();
+                    return cx.fillStrokeShape(this);
+                },
+                stroke: gradient2,
+                strokeWidth: 50
+            });
+            group = new Kinetic.Group();
+            group.add(this.wheel1);
+            group.add(this.wheel2);
+            return this.presentable(this, group);
+        };
+        return ColorWheel;
+    }(KStimulus);
+    exports.ColorWheel = ColorWheel;
 }.call(this));
 });
 return require('65');

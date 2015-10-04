@@ -162,7 +162,7 @@ instructions = """
           else
             "Incorrect!"
 
-          if @response[1].RT > 4000
+          if @response[1].RT > 20000
             message += " -- Try to go faster!"
           Text:
             content: message
@@ -178,7 +178,7 @@ instructions = """
         1:
           Action:
             execute: (context) ->
-              console.log("executing coda")
+
               dat = context.userData({taskName: "main", type: "response", name: "Receiver"}).get()
               logdat = for obj in dat
                 TrialNumber: obj.trialNumber

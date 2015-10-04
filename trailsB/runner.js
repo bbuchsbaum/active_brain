@@ -86,11 +86,27 @@
                       Task: "TrailsA",
                       trialNumber: context.get("State.trialNumber"),
                       blockNumber: context.get("State.blockNumber"),
-                      node: ev.node_id
+                      node: ev.node_id,
+                      errors: ev.errors
                     };
                     resultObj = context.get("resultObject");
                     resultObj.push(resp);
                     return console.log(resultObj);
+                  },
+                  trail_completed: function(ev) {
+                    var resp, resultObj;
+                    resp = {
+                      RT: 0,
+                      timeElapsed: ev.timeElapsed,
+                      index: ev.index,
+                      Task: "TrailsA",
+                      trialNumber: context.get("State.trialNumber"),
+                      blockNumber: context.get("State.blockNumber"),
+                      node: ev.node_id,
+                      errors: ev.errors
+                    };
+                    resultObj = context.get("resultObject");
+                    return resultObj.push(resp);
                   }
                 }
               },
@@ -150,11 +166,27 @@
                       Task: "TrailsA",
                       trialNumber: context.get("State.trialNumber"),
                       blockNumber: context.get("State.blockNumber"),
-                      node: ev.node_id
+                      node: ev.node_id,
+                      errors: ev.errors
                     };
                     resultObj = context.get("resultObject");
                     resultObj.push(resp);
                     return console.log(resultObj);
+                  },
+                  trail_completed: function(ev) {
+                    var resp, resultObj;
+                    resp = {
+                      RT: 0,
+                      timeElapsed: ev.timeElapsed,
+                      index: ev.index,
+                      Task: "TrailsA",
+                      trialNumber: context.get("State.trialNumber"),
+                      blockNumber: context.get("State.blockNumber"),
+                      node: ev.node_id,
+                      errors: ev.errors
+                    };
+                    resultObj = context.get("resultObject");
+                    return resultObj.push(resp);
                   }
                 }
               },

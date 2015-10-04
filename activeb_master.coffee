@@ -72,7 +72,7 @@ Active_Brain.start = =>
     .then( -> taskSet[1].start(window._session, window._subject))
     .then(-> taskSet[2].start(window._session, window._subject))
     .then(-> taskSet[3].start(window._session, window._subject))
-    .then(-> Done.start.start(window._session, window._subject)))
+    .then(-> Done.start(window._session, window._subject)))
 
 
 

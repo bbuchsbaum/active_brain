@@ -13,7 +13,7 @@
           1: {
             Text: {
               content: ["You are finished!", "Please raise your hand briefly and await further instructions."],
-              fontSize: 20,
+              fontSize: 32,
               position: "center",
               origin: "center"
             },
@@ -21,12 +21,29 @@
               AnyKey: {}
             }
           }
+        },
+        Coda: {
+          Events: {
+            1: {
+              Text: {
+                content: "",
+                position: "center",
+                origin: "center"
+              },
+              Next: {
+                Timeout: {
+                  duration: 1000
+                }
+              }
+            }
+          }
         }
       }
     },
     Flow: function(routines) {
       return {
-        1: routines.Prelude
+        1: routines.Prelude,
+        2: routines.Coda
       };
     }
   };
@@ -36,7 +53,7 @@
       var pres;
       _this.context = new Psy.createContext();
       _this.context.set("active_brain", true);
-      pres = new Psy.Presentation({}, window.Done.experiment, context);
+      pres = new Psy.Presentation({}, _this.Done.experiment, _this.context);
       return pres.start();
     };
   })(this);

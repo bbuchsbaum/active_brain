@@ -91,7 +91,7 @@
         }).then(function() {
           return taskSet[3].start(window._session, window._subject);
         }).then(function() {
-          return Done.start.start(window._session, window._subject);
+          return Done.start(window._session, window._subject);
         });
       });
     };
